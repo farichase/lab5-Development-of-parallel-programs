@@ -58,4 +58,14 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1607366724671">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1607366724671" />
+    <state x="1129" y="36" width="700" height="1007" key="dock-window-1" timestamp="1607366726491">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="1129" y="36" width="700" height="1007" key="dock-window-1/67.27.1853.1053@67.27.1853.1053" timestamp="1607366726491" />
+  </component>
 </project>

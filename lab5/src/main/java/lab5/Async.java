@@ -11,6 +11,7 @@ import akka.stream.javadsl.Flow;
 import javafx.util.Pair;
 
 import java.time.Duration;
+import java.util.concurrent.CompletableFuture;
 
 public class Async {
     private ActorRef cacheActor;
@@ -26,7 +27,11 @@ public class Async {
             int count = Integer.parseInt(query.get("count").get());
             return new Pair<>(url, count);
         }).mapAsync(PARALLELIZM, (Pair<String, Integer> pair) -> {
-            return Patterns.ask(this.cacheActor, pair, TIMEOUT).thenCompose()
+            return Patterns.ask(this.cacheActor, pair, TIMEOUT).thenCompose(res -> {
+                if ((float)res >= 0) {
+                    return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (float)res));
+                }
+            })
 
 
 

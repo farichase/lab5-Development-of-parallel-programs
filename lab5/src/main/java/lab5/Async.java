@@ -3,8 +3,10 @@ package lab5;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.model.HttpRequest;
+import akka.http.javadsl.model.Query;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import javafx.util.Pair;
 
 public class Async {
     private ActorRef cacheActor;
@@ -13,6 +15,7 @@ public class Async {
     }
     public static Flow<> createRouteFlow(ActorMaterializer materializer){
         return Flow.of(HttpRequest.class).map( request -> {
+                    Query query = request.getUri().query();
                     return new Pair(request)
                 }
         );

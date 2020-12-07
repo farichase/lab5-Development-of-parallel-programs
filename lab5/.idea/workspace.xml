@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4ebaa11-49c9-4269-99cc-54aa53ef974b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab5/CacheActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab5/CacheActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab5/Async.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab5/Async.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,5 +69,21 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="969" y="162" width="947" height="893" key="dock-window-1/67.27.1853.1053@67.27.1853.1053" timestamp="1607368997334" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$USER_HOME$/Загрузки/AsyncHttpClient.class</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$USER_HOME$/Загрузки/AsyncHttpClient.class</url>
+          <line>38</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -16,7 +16,8 @@ public class Async {
     public static Flow<> createRouteFlow(ActorMaterializer materializer){
         return Flow.of(HttpRequest.class).map( request -> {
                     Query query = request.getUri().query();
-                    int count = 
+                    String url = query.get("testUrl").get();
+                    int count = Integer.parseInt(query.get("count").get());
                     return new Pair(request)
                 }
         );

@@ -12,6 +12,9 @@ public class Async {
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");
     }
     public static Flow<> createRouteFlow(ActorMaterializer materializer){
-        return Flow.of(HttpRequest.class).map()
+        return Flow.of(HttpRequest.class).map( request -> {
+                    return new Pair(request)
+                }
+        );
     }
 }

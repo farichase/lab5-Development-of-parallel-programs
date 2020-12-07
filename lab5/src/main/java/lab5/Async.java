@@ -7,6 +7,6 @@ public class Async {
     private ActorRef cacheActor;
     public Async(ActorSystem system){
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");
-
     }
+    public static Flow<>
 }

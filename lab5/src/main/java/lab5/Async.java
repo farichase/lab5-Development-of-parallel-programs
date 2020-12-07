@@ -13,7 +13,7 @@ import javafx.util.Pair;
 import java.time.Duration;
 
 public class Async {
-    private ActorRef cacheActor;
+    private static ActorRef cacheActor;
     private static int PARALLELIZM = 1;
     private static Duration TIMEOUT = Duration.ofSeconds(5);
     public Async(ActorSystem system){

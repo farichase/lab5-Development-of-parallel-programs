@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4ebaa11-49c9-4269-99cc-54aa53ef974b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab5/Async.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab5/Async.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab5/CacheActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab5/CacheActor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +41,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Загрузки/AsyncHttpClient.class" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Загрузки/CacheActor.class" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -63,10 +61,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1607366747691">
+    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1607369201565">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1607366747691" />
+    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1607369201565" />
     <state x="969" y="162" width="947" height="893" key="dock-window-1" timestamp="1607368997334">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

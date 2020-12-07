@@ -18,7 +18,7 @@ public class Async {
                     Query query = request.getUri().query();
                     String url = query.get("testUrl").get();
                     int count = Integer.parseInt(query.get("count").get());
-                    return new Pair(request)
+                    return new Pair<>(url, count);
                 }
         );
     }

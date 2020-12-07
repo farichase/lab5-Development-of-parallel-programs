@@ -13,13 +13,13 @@ import javafx.util.Pair;
 import java.time.Duration;
 
 public class Async {
-    private static ActorRef cacheActor;
+    private ActorRef cacheActor;
     private static int PARALLELIZM = 1;
     private static Duration TIMEOUT = Duration.ofSeconds(5);
     public Async(ActorSystem system){
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");
     }
-    public static Flow<> createRouteFlow(ActorMaterializer materializer){
+    public Flow<> createRouteFlow(ActorMaterializer materializer){
         return Flow.of(HttpRequest.class).map( request -> {
             Query query = request.getUri().query();
             String url = query.get("testUrl").get();

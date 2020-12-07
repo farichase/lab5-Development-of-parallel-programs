@@ -10,7 +10,7 @@ import javafx.util.Pair;
 
 public class Async {
     private ActorRef cacheActor;
-    private int 
+    private int PARALLELIZM_PARAMETR = 1;
     public Async(ActorSystem system){
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");
     }

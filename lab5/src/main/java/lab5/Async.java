@@ -26,7 +26,8 @@ public class Async {
             int count = Integer.parseInt(query.get("count").get());
             return new Pair<>(url, count);
         }).mapAsync(PARALLELIZM, (Pair<String, Integer> pair) -> {
-            return Patterns.ask(this.cacheActor, pair, TIMEOUT)
+            return Patterns.ask(this.cacheActor, pair, TIMEOUT).thenCompose()
+
 
 
         });

@@ -10,6 +10,7 @@ import javafx.util.Pair;
 
 public class Async {
     private ActorRef cacheActor;
+    private int 
     public Async(ActorSystem system){
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");
     }

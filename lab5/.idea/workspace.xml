@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4ebaa11-49c9-4269-99cc-54aa53ef974b" name="Default Changelist" comment="" />
+    <list default="true" id="b4ebaa11-49c9-4269-99cc-54aa53ef974b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab5/Async.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab5/Async.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,9 +65,9 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1607366747691" />
-    <state x="1136" y="191" width="700" height="1007" key="dock-window-1" timestamp="1607367083110">
+    <state x="969" y="162" width="947" height="893" key="dock-window-1" timestamp="1607367416171">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="1136" y="191" width="700" height="1007" key="dock-window-1/67.27.1853.1053@67.27.1853.1053" timestamp="1607367083110" />
+    <state x="969" y="162" width="947" height="893" key="dock-window-1/67.27.1853.1053@67.27.1853.1053" timestamp="1607367416171" />
   </component>
 </project>

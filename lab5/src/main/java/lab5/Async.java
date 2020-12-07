@@ -7,12 +7,15 @@ import akka.http.javadsl.model.Query;
 import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+
 import javafx.util.Pair;
+
+import java.time.Duration;
 
 public class Async {
     private ActorRef cacheActor;
     private static int PARALLELIZM = 1;
-    private static int TIMEOUT = 
+    private static Duration TIMEOUT = Duration.ofSeconds(5);
     public Async(ActorSystem system){
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");
     }
@@ -23,7 +26,7 @@ public class Async {
             int count = Integer.parseInt(query.get("count").get());
             return new Pair<>(url, count);
         }).mapAsync(PARALLELIZM, (Pair<String, Integer> pair) -> {
-            return Patterns.ask(this.cacheActor, pair, )
+            return Patterns.ask(this.cacheActor, pair, TIMEOUT)
 
 
         });

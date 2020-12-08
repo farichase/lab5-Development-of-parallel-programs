@@ -39,7 +39,7 @@ public class Async {
                 if ((long)res >= 0) {
                     return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (long)res));
                 }
-                Flow<Pair<String, Integer>, Object, NotUsed> flow = Flow.<Pair<String, Integer>>create()
+                Flow<Pair<String, Integer>, Long, NotUsed> flow = Flow.<Pair<String, Integer>>create()
                         .mapConcat(p -> new ArrayList<>(Collections.nCopies(p.getValue(), p.getKey())))
                         .mapAsync(1, req -> {
                             Long startTime = System.currentTimeMillis();
@@ -47,7 +47,9 @@ public class Async {
                             Long stopTime = System.currentTimeMillis();
                             return CompletableFuture.completedFuture(stopTime - startTime);
                         });
-                return Source.single(pair).via(flow).toMat(Sink.fold(0L, Long::sum), Keep.right()).run(materializer)
+                return Source.single(pair).via(flow)
+                        .toMat(Sink.fold(0L, Long::sum), Keep.right())
+                        .run(materializer)
                         .thenApply(sum -> {
                            return new Pair<>(pair.getKey(), sum/pair.getValue());
                         });

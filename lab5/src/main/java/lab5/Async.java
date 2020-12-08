@@ -1,8 +1,10 @@
 package lab5;
 
+import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.model.HttpRequest;
+import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.model.Query;
 import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
@@ -20,7 +22,7 @@ public class Async {
     public Async(ActorSystem system){
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");
     }
-    public Flow<> createRouteFlow(ActorMaterializer materializer){
+    final Flow<HttpRequest, HttpResponse, NotUsed> createRouteFlow(ActorMaterializer materializer){
         return Flow.of(HttpRequest.class).map( request -> {
             Query query = request.getUri().query();
             String url = query.get("testUrl").get();

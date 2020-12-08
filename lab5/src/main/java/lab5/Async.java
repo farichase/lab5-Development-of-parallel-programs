@@ -21,6 +21,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
 
 public class Async {
     private ActorRef cacheActor;
@@ -36,7 +37,8 @@ public class Async {
             int count = Integer.parseInt(query.get("count").get());
             return new Pair<>(url, count);
         }).mapAsync(PARALLELIZM, (pair) -> {
-            return Patterns.ask(this.cacheActor, pair, TIMEOUT).thenCompose(res -> {
+            CompletionStage<Object> completionStage = Patterns.ask(this.cacheActor, pair, TIMEOUT);
+            return completionStage.thenCompose(res -> {
                 if ((long)res >= 0) {
                     return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (long)res));
                 }
@@ -54,10 +56,11 @@ public class Async {
                         .thenApply(sum -> {
                            return new Pair<>(pair.getKey(), sum/pair.getValue());
                         });
-            })})
+            });
+        })
             .map((Pair<String, Integer> p) -> {
                 this.cacheActor.tell(p, ActorRef.noSender());
-                return HttpResponse.create().withEntity(HttpEntities.create(p.getKey() + " " + p.getValue()));
+                return HttpResponse.create().withEntity();
             });
     }
 }

@@ -34,7 +34,7 @@ public class Async {
             String url = query.get("testUrl").get();
             int count = Integer.parseInt(query.get("count").get());
             return new Pair<>(url, count);
-        }).mapAsync(PARALLELIZM, pair -> {
+        }).mapAsync(PARALLELIZM, (pair) -> {
             return Patterns.ask(this.cacheActor, pair, TIMEOUT).thenCompose(res -> {
                 if ((long)res >= 0) {
                     return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (long)res));
@@ -53,7 +53,11 @@ public class Async {
                         .thenApply(sum -> {
                            return new Pair<>(pair.getKey(), sum/pair.getValue());
                         });
-            }).map();
+            }).map((p) -> {
+                this.cacheActor.tell(p, ActorRef.noSender());
+                return 
+
+            });
 
 
 

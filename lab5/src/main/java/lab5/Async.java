@@ -37,7 +37,10 @@ public class Async {
                 }
                 Flow.<Pair<String, Integer>>create()
                         .mapConcat(p -> new ArrayList<>(Collections.nCopies(p.getValue(), p.getKey())))
-                        .mapAsync()
+                        .mapAsync(PARALLELIZM, req -> {
+                            Long startTime = System.currentTimeMillis();
+                            return 
+                        })
             })
 
 

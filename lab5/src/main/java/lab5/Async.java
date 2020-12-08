@@ -12,6 +12,7 @@ import akka.stream.javadsl.Flow;
 
 import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Sink;
+import akka.stream.javadsl.Source;
 import javafx.util.Pair;
 import org.asynchttpclient.Dsl;
 
@@ -46,7 +47,7 @@ public class Async {
                             Long stopTime = System.currentTimeMillis();
                             return CompletableFuture.completedFuture(stopTime - startTime);
                         });
-                return flow.toMat(Sink.fold(0L, Long::sum), Keep.right()).run(materializer);
+                return Source.single(req).
             }).map();
 
 

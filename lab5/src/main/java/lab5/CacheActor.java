@@ -16,6 +16,7 @@ public class CacheActor extends AbstractActor{
                 .match(String.class, msg -> {
                     getSender().tell(cache.getOrDefault(msg, (long)-1), ActorRef.noSender());
                 })
+                .match()
                 .build();
     }
     static Props props() {

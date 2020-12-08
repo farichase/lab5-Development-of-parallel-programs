@@ -42,9 +42,9 @@ public class Async {
                 if ((Integer)res >= 0) {
                     return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (Integer)res));
                 }
-                Flow<Pair<String, Integer>, Long, NotUsed> flow = Flow.<Pair<String, Integer>>create()
+                Flow<Pair<String, Integer>, Integer, NotUsed> flow = Flow.<Pair<String, Integer>>create()
                         .mapConcat(p -> new ArrayList<>(Collections.nCopies(p.getValue(), p.getKey())))
-                        .mapAsync(1, req -> {
+                        .mapAsync(pair.getValue(), req -> {
                             Long startTime = System.currentTimeMillis();
                             Dsl.asyncHttpClient().prepareGet(req).execute();
                             Long stopTime = System.currentTimeMillis();

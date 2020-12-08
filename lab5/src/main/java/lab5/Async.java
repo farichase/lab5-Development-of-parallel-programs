@@ -11,6 +11,7 @@ import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
 import javafx.util.Pair;
+import org.asynchttpclient.Dsl;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ public class Async {
                         .mapConcat(p -> new ArrayList<>(Collections.nCopies(p.getValue(), p.getKey())))
                         .mapAsync(PARALLELIZM, req -> {
                             Long startTime = System.currentTimeMillis();
-                            return 
+                            return Dsl.asyncHttpClient().prepareGet(req).
                         })
             })
 

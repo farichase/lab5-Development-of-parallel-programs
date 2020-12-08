@@ -54,7 +54,7 @@ public class Async {
                         .thenApply(sum -> {
                            return new Pair<>(pair.getKey(), sum/pair.getValue());
                         });
-            }).map((p) -> {
+            }).map((Pair p) -> {
                 this.cacheActor.tell(p, ActorRef.noSender());
                 return HttpResponse.create().withEntity(HttpEntities.create(((Message)p).getTime() + " " + ((Message)p).getUrl()));
             });

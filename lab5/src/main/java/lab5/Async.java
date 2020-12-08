@@ -28,8 +28,8 @@ public class Async {
             return new Pair<>(url, count);
         }).mapAsync(PARALLELIZM, (Pair<String, Integer> pair) -> {
             return Patterns.ask(this.cacheActor, pair, TIMEOUT).thenCompose(res -> {
-                if ((float)res >= 0) {
-                    return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (float)res));
+                if ((long)res >= 0) {
+                    return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (long)res));
                 }
             })
 

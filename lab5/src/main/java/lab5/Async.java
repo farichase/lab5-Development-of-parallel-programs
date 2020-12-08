@@ -47,7 +47,7 @@ public class Async {
                             return CompletableFuture.completedFuture(stopTime - startTime);
                         });
                 return flow.toMat(Sink.fold(0L, Long::sum), Keep.right()).run(materializer);
-            })
+            }).map();
 
 
 

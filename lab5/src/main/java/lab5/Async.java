@@ -47,7 +47,7 @@ public class Async {
                             Long stopTime = System.currentTimeMillis();
                             return CompletableFuture.completedFuture(stopTime - startTime);
                         });
-                return Source.single(req).
+                return Source.single(pair).via(flow).toMat(Sink.fold(0L, Long::sum))
             }).map();
 
 

@@ -36,7 +36,7 @@ public class Async {
                 if ((long)res >= 0) {
                     return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (long)res));
                 }
-                Flow.<Pair<String, Integer>>create()
+                Flow.<Pair<String, Integer>> flow =Flow.<Pair<String, Integer>>create()
                         .mapConcat(p -> new ArrayList<>(Collections.nCopies(p.getValue(), p.getKey())))
                         .mapAsync(1, req -> {
                             Long startTime = System.currentTimeMillis();

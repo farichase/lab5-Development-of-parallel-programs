@@ -31,18 +31,20 @@ public class Async {
             String url = query.get("testUrl").get();
             int count = Integer.parseInt(query.get("count").get());
             return new Pair<>(url, count);
-        }).mapAsync(PARALLELIZM, (Pair<String, Integer> pair) -> {
+        }).mapAsync(PARALLELIZM, pair -> {
             return Patterns.ask(this.cacheActor, pair, TIMEOUT).thenCompose(res -> {
                 if ((long)res >= 0) {
                     return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (long)res));
                 }
                 Flow.<Pair<String, Integer>>create()
                         .mapConcat(p -> new ArrayList<>(Collections.nCopies(p.getValue(), p.getKey())))
-                        .mapAsync(PARALLELIZM, req -> {
+                        .mapAsync(1, req -> {
                             Long startTime = System.currentTimeMillis();
-                            return Dsl.asyncHttpClient().prepareGet(req).
+                            Dsl.asyncHttpClient().prepareGet(req).execute();
+                            Long stopTime = System.currentTimeMillis();
+                            return CompletableFuture.completedFuture(stopTime - startTime);
                         })
-            })
+            }).map
 
 
 

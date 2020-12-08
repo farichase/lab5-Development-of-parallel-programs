@@ -46,7 +46,7 @@ public class Async {
                             Long stopTime = System.currentTimeMillis();
                             return CompletableFuture.completedFuture(stopTime - startTime);
                         });
-                return flow.toMat(Sink.fold(0L, ), Keep.right());
+                return flow.toMat(Sink.fold(0L, Long::sum), Keep.right()).run(materializer);
             })
 
 

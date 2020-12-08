@@ -43,7 +43,8 @@ public class Async {
                             Dsl.asyncHttpClient().prepareGet(req).execute();
                             Long stopTime = System.currentTimeMillis();
                             return CompletableFuture.completedFuture(stopTime - startTime);
-                        })
+                        });
+                return 
             }).map
 
 

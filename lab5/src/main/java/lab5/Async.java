@@ -31,7 +31,7 @@ public class Async {
                 if ((long)res >= 0) {
                     return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (long)res));
                 }
-                
+                Flow.<Pair<String, Long>>create()
             })
 
 

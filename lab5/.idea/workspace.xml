@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4ebaa11-49c9-4269-99cc-54aa53ef974b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab5/Async.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab5/Async.java" afterDir="false" />
-    </list>
+    <list default="true" id="b4ebaa11-49c9-4269-99cc-54aa53ef974b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,6 +114,11 @@
           <url>file://$USER_HOME$/Загрузки/AsyncHttpClient.class</url>
           <line>56</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$USER_HOME$/Загрузки/AsyncHttpClient.class</url>
+          <line>42</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$USER_HOME$/Загрузки/AsyncHttpClient.class</url>

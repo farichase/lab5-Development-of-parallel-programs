@@ -3,6 +3,7 @@ package lab5;
 import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.http.javadsl.model.HttpEntities;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.model.Query;
@@ -55,8 +56,7 @@ public class Async {
                         });
             }).map((p) -> {
                 this.cacheActor.tell(p, ActorRef.noSender());
-                return 
-
+                return HttpResponse.create().withEntity(HttpEntities.create(((Message)p).getTime() + " " + ((Message)p).getUrl()));
             });
 
 

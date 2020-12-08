@@ -31,15 +31,16 @@ public class Async {
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");
     }
     final Flow<HttpRequest, HttpResponse, NotUsed> createRouteFlow(ActorMaterializer materializer){
-        return Flow.of(HttpRequest.class).map( request -> {
-            Query query = request.getUri().query();
-            String url = query.get("testUrl").get();
-            int count = Integer.parseInt(query.get("count").get());
-            return new Pair<>(url, count);
+        return Flow.of(HttpRequest.class)
+            .map( request -> {
+                Query query = request.getUri().query();
+                String url = query.get("testUrl").get();
+                int count = Integer.parseInt(query.get("count").get());
+                return new Pair<>(url, count);
         }).mapAsync(PARALLELIZM, (pair) -> {
             return Patterns.ask(this.cacheActor, pair, TIMEOUT).thenCompose(res -> {
-                if ((long)res >= 0) {
-                    return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (long)res));
+                if ((Integer)res >= 0) {
+                    return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (Integer)res));
                 }
                 Flow<Pair<String, Integer>, Long, NotUsed> flow = Flow.<Pair<String, Integer>>create()
                         .mapConcat(p -> new ArrayList<>(Collections.nCopies(p.getValue(), p.getKey())))

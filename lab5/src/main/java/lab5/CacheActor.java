@@ -11,7 +11,9 @@ public class CacheActor extends AbstractActor{
     private Map<String, Float> cache = new HashMap<>();
     @Override
     public Receive createReceive(){
-        return ReceiveBuilder.create().build();
+        return ReceiveBuilder.create(
+                
+        ).build();
     }
     static Props props() {
         return Props.create(CacheActor.class, "");

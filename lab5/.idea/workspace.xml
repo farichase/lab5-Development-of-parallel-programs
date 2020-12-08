@@ -59,14 +59,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1607369201565">
+    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1607421221323">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1607369201565" />
-    <state x="969" y="162" width="947" height="893" key="dock-window-1" timestamp="1607368997334">
+    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1607421221323" />
+    <state x="1045" y="27" width="848" height="1007" key="dock-window-1" timestamp="1607421531679">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="969" y="162" width="947" height="893" key="dock-window-1/67.27.1853.1053@67.27.1853.1053" timestamp="1607368997334" />
+    <state x="1045" y="27" width="848" height="1007" key="dock-window-1/67.27.1853.1053@67.27.1853.1053" timestamp="1607421531679" />
+    <state x="178" y="253" key="run.anything.popup" timestamp="1607421429025">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="178" y="253" key="run.anything.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1607421429025" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

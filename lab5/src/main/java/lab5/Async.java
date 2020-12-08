@@ -15,7 +15,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class Async {
     private ActorRef cacheActor;
-    private static int PARALLELIZM = 1;
+    private static int PARALLELIZM = 3;
     private static Duration TIMEOUT = Duration.ofSeconds(5);
     public Async(ActorSystem system){
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");

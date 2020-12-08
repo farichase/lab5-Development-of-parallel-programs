@@ -107,6 +107,16 @@
           <line>58</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$USER_HOME$/Загрузки/AsyncHttpClient.class</url>
+          <line>60</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$USER_HOME$/Загрузки/AsyncHttpClient.class</url>
+          <line>56</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$USER_HOME$/Загрузки/AsyncHttpClient.class</url>
           <line>31</line>

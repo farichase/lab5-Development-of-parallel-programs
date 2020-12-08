@@ -13,6 +13,7 @@ import akka.stream.javadsl.Flow;
 import javafx.util.Pair;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 
@@ -34,8 +35,8 @@ public class Async {
                 if ((long)res >= 0) {
                     return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (long)res));
                 }
-                Flow.<Pair<String, Long>>create()
-                        .mapConcat(pair -> Collections.nCopies())
+                Flow.<Pair<String, Integer>>create()
+                        .mapConcat(p -> new ArrayList<>(Collections.nCopies(p.getValue(), p.getKey())))
                         .mapAsync()
             })
 

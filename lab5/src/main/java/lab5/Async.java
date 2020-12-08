@@ -37,8 +37,7 @@ public class Async {
             int count = Integer.parseInt(query.get("count").get());
             return new Pair<>(url, count);
         }).mapAsync(PARALLELIZM, (pair) -> {
-            CompletionStage<Object> completionStage = Patterns.ask(this.cacheActor, pair, TIMEOUT);
-            return completionStage.thenCompose(res -> {
+            return Patterns.ask(this.cacheActor, pair, TIMEOUT).thenCompose(res -> {
                 if ((long)res >= 0) {
                     return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (long)res));
                 }

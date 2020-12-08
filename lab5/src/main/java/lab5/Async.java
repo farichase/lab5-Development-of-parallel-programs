@@ -32,6 +32,8 @@ public class Async {
                     return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (long)res));
                 }
                 Flow.<Pair<String, Long>>create()
+                        .mapConcat()
+                        .mapAsync()
             })
 
 

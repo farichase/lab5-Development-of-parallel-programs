@@ -122,6 +122,11 @@
           <line>42</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$USER_HOME$/Загрузки/AsyncHttpClient.class</url>
+          <line>41</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$USER_HOME$/Загрузки/AsyncHttpClient.class</url>
           <line>31</line>

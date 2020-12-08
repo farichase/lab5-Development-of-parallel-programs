@@ -57,9 +57,9 @@ public class Async {
                         });
             });
         })
-            .map((Pair<String, Integer> p) -> {
+            .map((Object p) -> {
                 this.cacheActor.tell(p, ActorRef.noSender());
-                return HttpResponse.create().withEntity(String.valueOf(p.getValue()));
+                return (HttpResponse)HttpResponse.create().withEntity(HttpEntities.create(((Message)p).getTime().toString() ));
             });
     }
 }

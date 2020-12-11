@@ -17,8 +17,8 @@ import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 
 public class AkkaApp {
-    private static final String HOST = "localhost";
-    private static final int PORT = 8080;
+    private final static String HOST = "localhost";
+    private final static int PORT = 8080;
 
     public static void main(String[] args) throws IOException {
         System.out.println("start");

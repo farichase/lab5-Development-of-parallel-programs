@@ -13,6 +13,8 @@ import akka.stream.javadsl.Flow;
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
+import static org.asynchttpclient.Dsl.asyncHttpClient;
+
 
 public class AkkaApp {
     public static void main(String[] args) throws IOException {
@@ -30,6 +32,11 @@ public class AkkaApp {
         System.in.read();
         binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> {
             system.terminate();
+            try {
+                asyncHttpClient().close();
+            } catch (IOException err) {
+                System.out.println(err.getStackTrace());
+            }
         });
     }
 }

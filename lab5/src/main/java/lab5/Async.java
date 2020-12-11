@@ -15,13 +15,11 @@ import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Sink;
 import akka.stream.javadsl.Source;
 import javafx.util.Pair;
-import org.asynchttpclient.Dsl;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionStage;
 
 import static org.asynchttpclient.Dsl.asyncHttpClient;
 

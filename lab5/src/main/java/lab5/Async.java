@@ -66,7 +66,7 @@ public class Async {
         })
             .map((Pair<String, Long> p) -> {
                 this.cacheActor.tell(p, ActorRef.noSender());
-                return HttpResponse.create().withEntity(HttpEntities.create(((Message)p).getTime().toString() ));
+                return HttpResponse.create().withEntity(HttpEntities.create(p.getValue().toString()));
             });
     }
 }

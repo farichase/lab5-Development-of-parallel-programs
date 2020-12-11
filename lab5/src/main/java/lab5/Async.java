@@ -45,9 +45,9 @@ public class Async {
                 Flow<Pair<String, Integer>, Integer, NotUsed> flow = Flow.<Pair<String, Integer>>create()
                         .mapConcat(p -> new ArrayList<>(Collections.nCopies(p.getValue(), p.getKey())))
                         .mapAsync(pair.getValue(), (req) -> {
-                            Long startTime = System.currentTimeMillis();
+                            long startTime = System.currentTimeMillis();
                             Dsl.asyncHttpClient().prepareGet(req).execute();
-                            Long stopTime = System.currentTimeMillis();
+                            long stopTime = System.currentTimeMillis();
                             return CompletableFuture.completedFuture(stopTime - startTime);
                         });
                 return Source.single(pair).via(flow)

@@ -20,7 +20,6 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionStage;
 
 import static org.asynchttpclient.Dsl.asyncHttpClient;
 
@@ -33,10 +32,6 @@ public class AsyncClient {
     private String COUNT = "count";
     public AsyncClient(ActorSystem system){
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");
-    }
-
-    private static Sink<Pair<String, Integer>, CompletionStage<Long>> testSink(){
-
     }
 
     final Flow<HttpRequest, HttpResponse, NotUsed> createRouteFlow(ActorMaterializer materializer){
@@ -62,7 +57,7 @@ public class AsyncClient {
                             return CompletableFuture.completedFuture(stopTime - startTime);
                         });
                 return Source.single(pair).via(flow)
-                        .toMat(testSink(), Keep.right())
+                        .toMat(Sink.fold(ZERO, Long::sum), Keep.right())
                         .run(materializer)
                         .thenApply(sum ->
                             new Pair<>(pair.getKey(), sum / pair.getValue())

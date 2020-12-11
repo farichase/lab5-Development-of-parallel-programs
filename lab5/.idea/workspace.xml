@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4ebaa11-49c9-4269-99cc-54aa53ef974b" name="Default Changelist" comment="" />
+    <list default="true" id="b4ebaa11-49c9-4269-99cc-54aa53ef974b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +41,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Загрузки/Response.class" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Загрузки/CacheActor.class" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -76,26 +78,26 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="341" y="357" width="525" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1607691587218" />
-    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1607422334253">
+    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1607695161468">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1607422334253" />
-    <state width="1807" height="277" key="GridCell.Tab.0.bottom" timestamp="1607692309720">
+    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1607695161468" />
+    <state width="848" height="275" key="GridCell.Tab.0.bottom" timestamp="1607695163982">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1607692309720" />
-    <state width="1807" height="277" key="GridCell.Tab.0.center" timestamp="1607692309719">
+    <state width="848" height="275" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1607695163982" />
+    <state width="848" height="275" key="GridCell.Tab.0.center" timestamp="1607695163981">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1607692309719" />
-    <state width="1807" height="277" key="GridCell.Tab.0.left" timestamp="1607692309718">
+    <state width="848" height="275" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1607695163981" />
+    <state width="848" height="275" key="GridCell.Tab.0.left" timestamp="1607695163981">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1607692309718" />
-    <state width="1807" height="277" key="GridCell.Tab.0.right" timestamp="1607692309720">
+    <state width="848" height="275" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1607695163981" />
+    <state width="848" height="275" key="GridCell.Tab.0.right" timestamp="1607695163981">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1607692309720" />
+    <state width="848" height="275" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1607695163981" />
     <state x="921" y="27" width="972" height="1007" key="dock-window-1" timestamp="1607690496273">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

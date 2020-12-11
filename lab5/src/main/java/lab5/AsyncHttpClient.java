@@ -25,7 +25,6 @@ import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 public class AsyncHttpClient {
     private final ActorRef cacheActor;
-    private final static int PARALLELIZM = 1;
     private final static long ZERO = 0L;
     private final static Duration TIMEOUT = Duration.ofSeconds(5);
     private final String URL = "testUrl";
@@ -41,7 +40,7 @@ public class AsyncHttpClient {
                 String url = query.get(URL).orElse(null);
                 int count = Integer.parseInt(query.get(COUNT).get());
                 return new Pair<>(url, count);
-        }).mapAsync(PARALLELIZM, (pair) ->
+        }).mapAsync(1, (pair) ->
              Patterns.ask(this.cacheActor, pair.getKey(), TIMEOUT).thenCompose(res -> {
                 if ((long)res >= ZERO) {
                     return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (long)res));

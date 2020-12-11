@@ -34,7 +34,7 @@ public class AkkaApp {
             try {
                 asyncHttpClient().close();
             } catch(IOException err) {
-
+                err.printStackTrace();
             }
         });
     }

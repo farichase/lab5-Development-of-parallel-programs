@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4ebaa11-49c9-4269-99cc-54aa53ef974b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab5/AkkaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab5/AkkaApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab5/CacheActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab5/CacheActor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,26 +78,26 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="341" y="357" width="525" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1607691587218" />
-    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1607697601999">
+    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1607699091406">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1607697601999" />
-    <state width="1807" height="276" key="GridCell.Tab.0.bottom" timestamp="1607698627258">
+    <state x="297" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1607699091406" />
+    <state width="1807" height="276" key="GridCell.Tab.0.bottom" timestamp="1607698769356">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="276" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1607698627258" />
-    <state width="1807" height="276" key="GridCell.Tab.0.center" timestamp="1607698627257">
+    <state width="1807" height="276" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1607698769356" />
+    <state width="1807" height="276" key="GridCell.Tab.0.center" timestamp="1607698769355">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="276" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1607698627257" />
-    <state width="1807" height="276" key="GridCell.Tab.0.left" timestamp="1607698627257">
+    <state width="1807" height="276" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1607698769355" />
+    <state width="1807" height="276" key="GridCell.Tab.0.left" timestamp="1607698769354">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="276" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1607698627257" />
-    <state width="1807" height="276" key="GridCell.Tab.0.right" timestamp="1607698627258">
+    <state width="1807" height="276" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1607698769354" />
+    <state width="1807" height="276" key="GridCell.Tab.0.right" timestamp="1607698769355">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="276" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1607698627258" />
+    <state width="1807" height="276" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1607698769355" />
     <state x="970" y="37" width="848" height="1007" key="dock-window-1" timestamp="1607697042299">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

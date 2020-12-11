@@ -35,7 +35,7 @@ public class AsyncClient {
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");
     }
 
-    private static Sink<Pair<String, Long>, CompletionStage<Long>> testSink(){
+    private static Sink<Pair<String, Integer>, CompletionStage<Long>> testSink(){
 
     }
 

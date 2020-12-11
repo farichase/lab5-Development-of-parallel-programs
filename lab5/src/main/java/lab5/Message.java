@@ -1,16 +1,16 @@
 package lab5;
 
 public class Message {
-    private Long time;
+    private long time;
     private String url;
-    public Message(String url, Long time){
+    public Message(String url, long time){
         this.time = time;
         this.url = url;
     }
-    public Long getTime(){
+    public long getTime(){
         return this.time;
     }
-    public void setTime(Long time){
+    public void setTime(long time){
         this.time = time;
     }
     public String getUrl(){

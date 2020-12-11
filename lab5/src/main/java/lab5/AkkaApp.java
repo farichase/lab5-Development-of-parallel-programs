@@ -17,6 +17,9 @@ import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 
 public class AkkaApp {
+    private static String HOST = "localhost";
+    private static int PORT = 8080;
+
     public static void main(String[] args) throws IOException {
         System.out.println("start");
         ActorSystem system = ActorSystem.create("routes");
@@ -25,18 +28,18 @@ public class AkkaApp {
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = new Async(system).createRouteFlow(materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
-                ConnectHttp.toHost("localhost", 8080),
+                ConnectHttp.toHost(HOST, PORT),
                 materializer
         );
         System.out.println("Server online at http://localhost:8080");
         System.in.read();
         binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> {
             system.terminate();
-            try {
-                asyncHttpClient().close();
-            } catch (IOException err) {
-                System.out.println(err.getStackTrace());
-            }
         });
+        try {
+            asyncHttpClient().close();
+        } catch (IOException err) {
+            System.out.println(err.getStackTrace());
+        }
     }
 }

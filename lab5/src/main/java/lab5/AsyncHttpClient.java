@@ -42,7 +42,7 @@ public class AsyncHttpClient {
                 int count = Integer.parseInt(query.get(COUNT).get());
                 return new Pair<>(url, count);
         }).mapAsync(PARALLELIZM, (pair) ->
-             Patterns.ask(this.cacheActor, pair, TIMEOUT).thenCompose(res -> {
+             Patterns.ask(this.cacheActor, pair.getKey(), TIMEOUT).thenCompose(res -> {
                 if ((Long)res >= ZERO) {
                     return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (Long)res));
                 }

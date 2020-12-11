@@ -14,10 +14,8 @@ public class CacheActor extends AbstractActor{
     @Override
     public Receive createReceive(){
         return ReceiveBuilder.create()
-                .match(Pair.class, msg -> {
+                .match(String.class, msg -> {
                         getSender().tell(cache.getOrDefault(msg, (long)-1), ActorRef.noSender());
-
-
                 })
                 .match(Message.class, msg -> {
                     cache.put(msg.getUrl(), msg.getTime());
@@ -25,7 +23,7 @@ public class CacheActor extends AbstractActor{
                 .build();
     }
     static Props props() {
-        return Props.create(CacheActor.class, new Object[0]);
+        return Props.create(CacheActor.class);
     }
 
 }

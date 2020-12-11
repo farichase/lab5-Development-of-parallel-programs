@@ -43,8 +43,8 @@ public class AsyncHttpClient {
                 return new Pair<>(url, count);
         }).mapAsync(PARALLELIZM, (pair) ->
              Patterns.ask(this.cacheActor, pair.getKey(), TIMEOUT).thenCompose(res -> {
-                if ((Long)res >= ZERO) {
-                    return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (Long)res));
+                if ((long)res >= ZERO) {
+                    return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (long)res));
                 }
                 Flow<Pair<String, Integer>, Long, NotUsed> flow = Flow.<Pair<String, Integer>>create()
                         .mapConcat(p ->

@@ -22,7 +22,7 @@ public class CacheActor extends AbstractActor{
                 .build();
     }
     static Props props() {
-        return Props.create(CacheActor.class, "");
+        return Props.create(CacheActor.class);
     }
 
 }

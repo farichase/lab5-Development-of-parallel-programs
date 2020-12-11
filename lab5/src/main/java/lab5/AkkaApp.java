@@ -31,11 +31,6 @@ public class AkkaApp {
         System.in.read();
         binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> {
             system.terminate();
-            try {
-                asyncHttpClient().close();
-            } catch(IOException err) {
-                err.printStackTrace();
-            }
         });
     }
 }

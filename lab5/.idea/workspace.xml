@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4ebaa11-49c9-4269-99cc-54aa53ef974b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab5/CacheActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab5/CacheActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab5/AsyncHttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab5/AsyncHttpClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

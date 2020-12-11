@@ -13,7 +13,6 @@ import akka.stream.javadsl.Flow;
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
-import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 public class AkkaApp {
     public static void main(String[] args) throws IOException {

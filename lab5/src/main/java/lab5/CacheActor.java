@@ -10,7 +10,6 @@ import java.util.Map;
 
 public class CacheActor extends AbstractActor{
     private Map<String, Long> cache = new HashMap<>();
-    public CacheActor(){}
     @Override
     public Receive createReceive(){
         return ReceiveBuilder.create()

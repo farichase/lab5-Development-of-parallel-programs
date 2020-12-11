@@ -23,6 +23,8 @@ import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
+import static org.asynchttpclient.Dsl.asyncHttpClient;
+
 public class Async {
     private ActorRef cacheActor;
     private static int PARALLELIZM = 1;
@@ -46,7 +48,7 @@ public class Async {
                         .mapConcat(p -> new ArrayList<>(Collections.nCopies(p.getValue(), p.getKey())))
                         .mapAsync(pair.getValue(), (req) -> {
                             long startTime = System.currentTimeMillis();
-                            Dsl.asyncHttpClient().prepareGet(req).execute();
+                            asyncHttpClient().prepareGet(req).execute();
                             long stopTime = System.currentTimeMillis();
                             return CompletableFuture.completedFuture(stopTime - startTime);
                         });

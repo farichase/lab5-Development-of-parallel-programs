@@ -23,14 +23,14 @@ import java.util.concurrent.CompletableFuture;
 
 import static org.asynchttpclient.Dsl.asyncHttpClient;
 
-public class AsyncClient {
+public class AsyncHttpClient {
     private ActorRef cacheActor;
     private static int PARALLELIZM = 1;
     private static long ZERO = 0L;
     private static Duration TIMEOUT = Duration.ofSeconds(5);
     private String URL = "testUrl";
     private String COUNT = "count";
-    public AsyncClient(ActorSystem system){
+    public AsyncHttpClient(ActorSystem system){
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");
     }
 

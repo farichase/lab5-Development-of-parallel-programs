@@ -28,10 +28,12 @@ import static org.asynchttpclient.Dsl.asyncHttpClient;
 public class Async {
     private ActorRef cacheActor;
     private static int PARALLELIZM = 1;
+    private static long ZERO = 0L;
     private static Duration TIMEOUT = Duration.ofSeconds(5);
     public Async(ActorSystem system){
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");
     }
+    
     final Flow<HttpRequest, HttpResponse, NotUsed> createRouteFlow(ActorMaterializer materializer){
         return Flow.of(HttpRequest.class)
             .map( request -> {
@@ -41,11 +43,13 @@ public class Async {
                 return new Pair<>(url, count);
         }).mapAsync(PARALLELIZM, (pair) -> {
             return Patterns.ask(this.cacheActor, pair.getKey(), TIMEOUT).thenCompose(res -> {
-                if ((Integer)res >= 0) {
-                    return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (Integer)res));
+                if ((Long)res >= ZERO) {
+                    return CompletableFuture.completedFuture(new Pair<>(pair.getKey(), (Long)res));
                 }
-                Flow<Pair<String, Integer>, Integer, NotUsed> flow = Flow.<Pair<String, Integer>>create()
-                        .mapConcat(p -> new ArrayList<>(Collections.nCopies(p.getValue(), p.getKey())))
+                Flow<Pair<String, Integer>, Long, NotUsed> flow = Flow.<Pair<String, Integer>>create()
+                        .mapConcat(p -> {
+                            return new ArrayList<>(Collections.nCopies(p.getValue(), p.getKey()));
+                        })
                         .mapAsync(pair.getValue(), (req) -> {
                             long startTime = System.currentTimeMillis();
                             asyncHttpClient().prepareGet(req).execute();
@@ -53,7 +57,7 @@ public class Async {
                             return CompletableFuture.completedFuture(stopTime - startTime);
                         });
                 return Source.single(pair).via(flow)
-                        .toMat(Sink.fold(0L, Long::sum), Keep.right())
+                        .toMat(Sink.fold(ZERO, Long::sum), Keep.right())
                         .run(materializer)
                         .thenApply(sum -> {
                            return new Pair<>(pair.getKey(), sum/pair.getValue());

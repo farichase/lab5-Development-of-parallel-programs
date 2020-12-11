@@ -15,11 +15,8 @@ public class CacheActor extends AbstractActor{
     public Receive createReceive(){
         return ReceiveBuilder.create()
                 .match(Pair.class, msg -> {
-                    if (this.cache.containsKey(msg.getKey())){
                         getSender().tell(cache.getOrDefault(msg, (long)-1), ActorRef.noSender());
-                    } else {
-                        getSender().tell("No responce", this.self());
-                    }
+
 
                 })
                 .match(Message.class, msg -> {

@@ -38,7 +38,7 @@ public class AsyncHttpClient {
         return Flow.of(HttpRequest.class)
             .map( request -> {
                 Query query = request.getUri().query();
-                String url = query.get(URL).get();
+                String url = query.get(URL).orElse(null);
                 int count = Integer.parseInt(query.get(COUNT).get());
                 return new Pair<>(url, count);
         }).mapAsync(PARALLELIZM, (pair) ->

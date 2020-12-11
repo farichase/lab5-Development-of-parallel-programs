@@ -13,7 +13,7 @@ public class CacheActor extends AbstractActor{
     public Receive createReceive(){
         return ReceiveBuilder.create()
                 .match(String.class, msg -> getSender().tell(cache.getOrDefault(msg, (long)-1), ActorRef.noSender()))
-                .match(Message.class, msg -> cache.put(msg.getUrl(), msg.getTime()))
+                .match(Message.class, msg -> cache.putIfAbsent(msg.getUrl(), msg.getTime()))
                 .build();
     }
     static Props props() {

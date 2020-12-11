@@ -57,7 +57,7 @@ public class AsyncClient {
                             return CompletableFuture.completedFuture(stopTime - startTime);
                         });
                 return Source.single(pair).via(flow)
-                        .toMat(Sink.fold(ZERO, Long::sum), Keep.right())
+                        .toMat(testSink(), Keep.right())
                         .run(materializer)
                         .thenApply(sum ->
                             new Pair<>(pair.getKey(), sum / pair.getValue())

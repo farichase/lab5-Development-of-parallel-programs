@@ -33,7 +33,7 @@ public class Async {
     public Async(ActorSystem system){
         this.cacheActor = system.actorOf(CacheActor.props(), "cache");
     }
-    
+
     final Flow<HttpRequest, HttpResponse, NotUsed> createRouteFlow(ActorMaterializer materializer){
         return Flow.of(HttpRequest.class)
             .map( request -> {
@@ -66,7 +66,7 @@ public class Async {
         })
             .map((Pair<String, Long> p) -> {
                 this.cacheActor.tell(p, ActorRef.noSender());
-                return (HttpResponse)HttpResponse.create().withEntity(HttpEntities.create(((Message)p).getTime().toString() ));
+                return HttpResponse.create().withEntity(HttpEntities.create(((Message)p).getTime().toString() ));
             });
     }
 }

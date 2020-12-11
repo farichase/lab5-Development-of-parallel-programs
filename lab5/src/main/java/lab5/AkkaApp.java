@@ -17,8 +17,8 @@ import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 
 public class AkkaApp {
-    private static String HOST = "localhost";
-    private static int PORT = 8080;
+    private static final String HOST = "localhost";
+    private static final int PORT = 8080;
 
     public static void main(String[] args) throws IOException {
         System.out.println("start");
@@ -33,13 +33,11 @@ public class AkkaApp {
         );
         System.out.println("Server online at http://localhost:8080");
         System.in.read();
-        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> {
-            system.terminate();
-        });
+        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
         try {
             asyncHttpClient().close();
         } catch (IOException err) {
-            System.out.println(err.getStackTrace());
+            err.getStackTrace();
         }
     }
 }

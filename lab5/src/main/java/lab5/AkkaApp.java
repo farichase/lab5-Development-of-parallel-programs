@@ -33,8 +33,8 @@ public class AkkaApp {
             system.terminate();
             try {
                 asyncHttpClient().close();
-            } catch {
-                
+            } catch(IOException err) {
+
             }
         });
     }

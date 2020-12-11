@@ -27,6 +27,11 @@ public class AkkaApp {
         );
         System.out.println("Server online at http://localhost:8080");
         System.in.read();
-        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
+        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> {
+            system.terminate();
+            try {
+                ay
+            }
+        });
     }
 }

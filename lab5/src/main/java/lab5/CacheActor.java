@@ -19,5 +19,4 @@ public class CacheActor extends AbstractActor{
     static Props props() {
         return Props.create(CacheActor.class, new Object[0]);
     }
-
 }
